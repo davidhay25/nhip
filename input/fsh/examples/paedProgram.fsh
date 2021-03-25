@@ -125,7 +125,7 @@ Usage: #example
 
 * action[1].title = "3 month vaccinations"
 * action[1].timingAge = 3 'mo'
-* action[1].groupingBehavior = #logigal-group
+* action[1].groupingBehavior = #logical-group
 * action[1].selectionBehavior = #all 
 * action[1].requiredBehavior = #must-unless-documented
 
