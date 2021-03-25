@@ -76,3 +76,17 @@ Usage: #example
 * action[2].title = "RV1 administration at 6 weeks"
 * action[2].timingAge = 6 'wk'
 * action[2].definitionCanonical = "http://clinfhir/ActivityDefinition/rv1"
+
+* action[3].title = "DTap administration at 3 months"
+* action[3].timingAge = 3 'mo'
+* action[3].definitionCanonical = "http://clinfhir/ActivityDefinition/dtap"
+
+//don't administer if allergic to egg white
+* action[3].condition[0].kind = #applicability
+* action[3].condition[0].expression.description = "Not allergic to egg white"
+* action[3].condition[0].expression.language = #text/cql
+
+
+* action[4].title = "RV1 administration at 3 months"
+* action[4].timingAge = 3 'mo'
+* action[4].definitionCanonical = "http://clinfhir/ActivityDefinition/rv1"
