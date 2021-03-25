@@ -90,3 +90,49 @@ Usage: #example
 * action[4].title = "RV1 administration at 3 months"
 * action[4].timingAge = 3 'mo'
 * action[4].definitionCanonical = "http://clinfhir/ActivityDefinition/rv1"
+
+
+//// second PD
+Instance: pd2
+InstanceOf: PlanDefinition
+Description: "Paediatric plan definition - with nested actions"
+Usage: #example
+
+* status = #draft
+* description = "The New Zealand Paediatric Immunization program"
+
+* goal.description.text = "Ensure child is immunized from childhood illnesses"
+* relatedArtifact.type = #derived-from
+* relatedArtifact.url = "https://www.health.govt.nz/our-work/immunisation-handbook-2020/national-immunisation-schedule"
+
+
+//================
+* action[0].title = "6 week vaccinations"
+* action[0].timingAge = 6 'wk'
+* action[0].groupingBehavior = #logical-group
+* action[0].selectionBehavior = #all 
+* action[0].requiredBehavior = #must-unless-documented
+
+* action[0].action[0].title = "DTap administration at 6 weeks"
+* action[0].action[0].definitionCanonical = "http://clinfhir/ActivityDefinition/dtap"
+
+* action[0].action[1].title = "PCV10 administration at 6 weeks"
+* action[0].action[1].definitionCanonical = "http://clinfhir/ActivityDefinition/pcv10"
+
+* action[0].action[2].title = "RV1 administration at 6 weeks"
+* action[0].action[2].definitionCanonical = "http://clinfhir/ActivityDefinition/rv1"
+
+
+* action[1].title = "3 month vaccinations"
+* action[1].timingAge = 3 'mo'
+* action[1].groupingBehavior = #logigal-group
+* action[1].selectionBehavior = #all 
+* action[1].requiredBehavior = #must-unless-documented
+
+* action[1].action[0].title = "DTap administration at 3 months"
+* action[1].action[0].definitionCanonical = "http://clinfhir/ActivityDefinition/dtap"
+
+* action[1].action[1].title = "RV1 administration at  3 months"
+* action[1].action[1].definitionCanonical = "http://clinfhir/ActivityDefinition/rv1"
+
+//---
