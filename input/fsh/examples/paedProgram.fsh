@@ -24,7 +24,12 @@ Usage: #example
 * url = "http://clinfhir/ActivityDefinition/dtap"
 * title = "Administer DTap vaccine"
 * status = #draft
+
+//This is a made up code! Probably SNOMED for real
 * productCodeableConcept = $vaccCode#dtap "DTaP-IPV-HepB/Hib"
+* dosage.doseAndRate.doseQuantity = 0.5 'ml'
+* dosage.route = http://snomed.info/sct#78421000 "Intramuscular route"
+
 
 Instance: adPcv10
 InstanceOf: ActivityDefinition
@@ -86,7 +91,6 @@ Usage: #example
 * action[3].condition[0].expression.description = "Not allergic to egg white"
 * action[3].condition[0].expression.language = #text/cql
 
-
 * action[4].title = "RV1 administration at 3 months"
 * action[4].timingAge = 3 'mo'
 * action[4].definitionCanonical = "http://clinfhir/ActivityDefinition/rv1"
@@ -105,14 +109,17 @@ Usage: #example
 * relatedArtifact.type = #derived-from
 * relatedArtifact.url = "https://www.health.govt.nz/our-work/immunisation-handbook-2020/national-immunisation-schedule"
 
-
 //================
+
+//--------- 6 weeks immunization
 * action[0].title = "6 week vaccinations"
 * action[0].timingAge = 6 'wk'
 * action[0].groupingBehavior = #logical-group
 * action[0].selectionBehavior = #all 
 * action[0].requiredBehavior = #must-unless-documented
+* action[0].cardinalityBehavior = #single
 
+// --- 6 week vaccines
 * action[0].action[0].title = "DTap administration at 6 weeks"
 * action[0].action[0].definitionCanonical = "http://clinfhir/ActivityDefinition/dtap"
 
@@ -122,17 +129,18 @@ Usage: #example
 * action[0].action[2].title = "RV1 administration at 6 weeks"
 * action[0].action[2].definitionCanonical = "http://clinfhir/ActivityDefinition/rv1"
 
-
+// -------- 3 months immunization
 * action[1].title = "3 month vaccinations"
 * action[1].timingAge = 3 'mo'
 * action[1].groupingBehavior = #logical-group
 * action[1].selectionBehavior = #all 
 * action[1].requiredBehavior = #must-unless-documented
+* action[1].cardinalityBehavior = #single
 
+//3 month vaccines
 * action[1].action[0].title = "DTap administration at 3 months"
 * action[1].action[0].definitionCanonical = "http://clinfhir/ActivityDefinition/dtap"
 
 * action[1].action[1].title = "RV1 administration at  3 months"
 * action[1].action[1].definitionCanonical = "http://clinfhir/ActivityDefinition/rv1"
 
-//---
