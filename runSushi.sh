@@ -8,6 +8,9 @@ sushi fsh -o .
 
 if [[ $? -eq 0 ]]
 then
+ # note it needs to be run manually first as it creates a sample file for sushi
+ echo "Creating Program summary..."
+ localScripts/makePlanTable.js
 
 # create the 2 summary files extensions.xml & profiles.xml. Saves in both /input.. & /fsh/ig-data...
 
@@ -23,7 +26,7 @@ then
 # echo "Making NamingSystem summary"
 # ../scripts/makeNamingSystemSummary.js hpi
 
-echo "disabled"
+
 
 else 
 echo

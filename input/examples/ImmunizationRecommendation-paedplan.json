@@ -1,0 +1,593 @@
+{
+  "resourceType": "ImmunizationRecommendation",
+  "id": "paedplan",
+  "description": "A sample recommendation for a newborn due to have all immunizations",
+  "extension": [
+    {
+      "url": "http://clinfhir.com/StructureDefinition/plandefinition-url",
+      "valueUri": "http://clinfhir.com/PlanDefinition/paediatric"
+    }
+  ],
+  "patient": {
+    "reference": {
+      "display": "Patient reference here"
+    }
+  },
+  "date": "2021-03-29T05:43:52.628Z",
+  "recommendation": [
+    {
+      "vaccineCode": {
+        "coding": [
+          {
+            "code": "dtap",
+            "system": "http://clinfhir.com/CodeSystem/vaccCodes",
+            "display": "DTaP-IPV-HepB/Hib"
+          }
+        ]
+      },
+      "foreCastStatus": {
+        "coding": [
+          {
+            "code": "due",
+            "system": "http://terminology.hl7.org/CodeSystem/immunization-recommendation-status"
+          }
+        ]
+      },
+      "dateCriterion": [
+        {
+          "coding": [
+            {
+              "code": "30980-7",
+              "system": "http://loinc.org"
+            }
+          ],
+          "value": "2021-05-10T06:43:52.628Z"
+        }
+      ],
+      "series": "DTaP-IPV-HepB/Hib",
+      "doseNumberPositiveInt": 1,
+      "extension": [
+        {
+          "url": "http://clinfhir.com/StructureDefinition/disease-covered",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "code": "397428000",
+                "system": "http:snomed.info",
+                "display": "Diptheria"
+              }
+            ]
+          }
+        },
+        {
+          "url": "http://clinfhir.com/StructureDefinition/disease-covered",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "code": "76902006",
+                "system": "http:snomed.info",
+                "display": "Tetanus"
+              }
+            ]
+          }
+        },
+        {
+          "url": "http://clinfhir.com/StructureDefinition/disease-covered",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "code": "27836007",
+                "system": "http:snomed.info",
+                "display": "Pertussis"
+              }
+            ]
+          }
+        },
+        {
+          "url": "http://clinfhir.com/StructureDefinition/disease-covered",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "code": "398102009",
+                "system": "http:snomed.info",
+                "display": "Polio Myelitis"
+              }
+            ]
+          }
+        },
+        {
+          "url": "http://clinfhir.com/StructureDefinition/disease-covered",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "code": "66071002",
+                "system": "http:snomed.info",
+                "display": "Viral Hepatitis type B"
+              }
+            ]
+          }
+        },
+        {
+          "url": "http://clinfhir.com/StructureDefinition/disease-covered",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "code": "91428005",
+                "system": "http:snomed.info",
+                "display": "Haemophilus Influenzae infection"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "vaccineCode": {
+        "coding": [
+          {
+            "code": "pcv10",
+            "system": "http://clinfhir.com/CodeSystem/vaccCodes",
+            "display": "PCV10"
+          }
+        ]
+      },
+      "foreCastStatus": {
+        "coding": [
+          {
+            "code": "due",
+            "system": "http://terminology.hl7.org/CodeSystem/immunization-recommendation-status"
+          }
+        ]
+      },
+      "dateCriterion": [
+        {
+          "coding": [
+            {
+              "code": "30980-7",
+              "system": "http://loinc.org"
+            }
+          ],
+          "value": "2021-05-10T06:43:52.628Z"
+        }
+      ],
+      "series": "PCV10",
+      "doseNumberPositiveInt": 1
+    },
+    {
+      "vaccineCode": {
+        "coding": [
+          {
+            "code": "prv1",
+            "system": "http://clinfhir.com/CodeSystem/vaccCodes",
+            "display": "RV1"
+          }
+        ]
+      },
+      "foreCastStatus": {
+        "coding": [
+          {
+            "code": "due",
+            "system": "http://terminology.hl7.org/CodeSystem/immunization-recommendation-status"
+          }
+        ]
+      },
+      "dateCriterion": [
+        {
+          "coding": [
+            {
+              "code": "30980-7",
+              "system": "http://loinc.org"
+            }
+          ],
+          "value": "2021-05-10T06:43:52.628Z"
+        }
+      ],
+      "series": "RV1",
+      "doseNumberPositiveInt": 1
+    },
+    {
+      "vaccineCode": {
+        "coding": [
+          {
+            "code": "dtap",
+            "system": "http://clinfhir.com/CodeSystem/vaccCodes",
+            "display": "DTaP-IPV-HepB/Hib"
+          }
+        ]
+      },
+      "foreCastStatus": {
+        "coding": [
+          {
+            "code": "due",
+            "system": "http://terminology.hl7.org/CodeSystem/immunization-recommendation-status"
+          }
+        ]
+      },
+      "dateCriterion": [
+        {
+          "coding": [
+            {
+              "code": "30980-7",
+              "system": "http://loinc.org"
+            }
+          ],
+          "value": "2021-06-27T06:43:52.629Z"
+        }
+      ],
+      "series": "DTaP-IPV-HepB/Hib",
+      "doseNumberPositiveInt": 2,
+      "extension": [
+        {
+          "url": "http://clinfhir.com/StructureDefinition/disease-covered",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "code": "397428000",
+                "system": "http:snomed.info",
+                "display": "Diptheria"
+              }
+            ]
+          }
+        },
+        {
+          "url": "http://clinfhir.com/StructureDefinition/disease-covered",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "code": "76902006",
+                "system": "http:snomed.info",
+                "display": "Tetanus"
+              }
+            ]
+          }
+        },
+        {
+          "url": "http://clinfhir.com/StructureDefinition/disease-covered",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "code": "27836007",
+                "system": "http:snomed.info",
+                "display": "Pertussis"
+              }
+            ]
+          }
+        },
+        {
+          "url": "http://clinfhir.com/StructureDefinition/disease-covered",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "code": "398102009",
+                "system": "http:snomed.info",
+                "display": "Polio Myelitis"
+              }
+            ]
+          }
+        },
+        {
+          "url": "http://clinfhir.com/StructureDefinition/disease-covered",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "code": "66071002",
+                "system": "http:snomed.info",
+                "display": "Viral Hepatitis type B"
+              }
+            ]
+          }
+        },
+        {
+          "url": "http://clinfhir.com/StructureDefinition/disease-covered",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "code": "91428005",
+                "system": "http:snomed.info",
+                "display": "Haemophilus Influenzae infection"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "vaccineCode": {
+        "coding": [
+          {
+            "code": "prv1",
+            "system": "http://clinfhir.com/CodeSystem/vaccCodes",
+            "display": "RV1"
+          }
+        ]
+      },
+      "foreCastStatus": {
+        "coding": [
+          {
+            "code": "due",
+            "system": "http://terminology.hl7.org/CodeSystem/immunization-recommendation-status"
+          }
+        ]
+      },
+      "dateCriterion": [
+        {
+          "coding": [
+            {
+              "code": "30980-7",
+              "system": "http://loinc.org"
+            }
+          ],
+          "value": "2021-06-27T06:43:52.629Z"
+        }
+      ],
+      "series": "RV1",
+      "doseNumberPositiveInt": 1
+    },
+    {
+      "vaccineCode": {
+        "coding": [
+          {
+            "code": "dtap",
+            "system": "http://clinfhir.com/CodeSystem/vaccCodes",
+            "display": "DTaP-IPV-HepB/Hib"
+          }
+        ]
+      },
+      "foreCastStatus": {
+        "coding": [
+          {
+            "code": "due",
+            "system": "http://terminology.hl7.org/CodeSystem/immunization-recommendation-status"
+          }
+        ]
+      },
+      "dateCriterion": [
+        {
+          "coding": [
+            {
+              "code": "30980-7",
+              "system": "http://loinc.org"
+            }
+          ],
+          "value": "2021-08-26T06:43:52.629Z"
+        }
+      ],
+      "series": "DTaP-IPV-HepB/Hib",
+      "doseNumberPositiveInt": 3,
+      "extension": [
+        {
+          "url": "http://clinfhir.com/StructureDefinition/disease-covered",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "code": "397428000",
+                "system": "http:snomed.info",
+                "display": "Diptheria"
+              }
+            ]
+          }
+        },
+        {
+          "url": "http://clinfhir.com/StructureDefinition/disease-covered",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "code": "76902006",
+                "system": "http:snomed.info",
+                "display": "Tetanus"
+              }
+            ]
+          }
+        },
+        {
+          "url": "http://clinfhir.com/StructureDefinition/disease-covered",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "code": "27836007",
+                "system": "http:snomed.info",
+                "display": "Pertussis"
+              }
+            ]
+          }
+        },
+        {
+          "url": "http://clinfhir.com/StructureDefinition/disease-covered",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "code": "398102009",
+                "system": "http:snomed.info",
+                "display": "Polio Myelitis"
+              }
+            ]
+          }
+        },
+        {
+          "url": "http://clinfhir.com/StructureDefinition/disease-covered",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "code": "66071002",
+                "system": "http:snomed.info",
+                "display": "Viral Hepatitis type B"
+              }
+            ]
+          }
+        },
+        {
+          "url": "http://clinfhir.com/StructureDefinition/disease-covered",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "code": "91428005",
+                "system": "http:snomed.info",
+                "display": "Haemophilus Influenzae infection"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "vaccineCode": {
+        "coding": [
+          {
+            "code": "pcv10",
+            "system": "http://clinfhir.com/CodeSystem/vaccCodes",
+            "display": "PCV10"
+          }
+        ]
+      },
+      "foreCastStatus": {
+        "coding": [
+          {
+            "code": "due",
+            "system": "http://terminology.hl7.org/CodeSystem/immunization-recommendation-status"
+          }
+        ]
+      },
+      "dateCriterion": [
+        {
+          "coding": [
+            {
+              "code": "30980-7",
+              "system": "http://loinc.org"
+            }
+          ],
+          "value": "2021-08-26T06:43:52.629Z"
+        }
+      ],
+      "series": "PCV10",
+      "doseNumberPositiveInt": 2
+    },
+    {
+      "vaccineCode": {
+        "coding": [
+          {
+            "code": "mmr",
+            "system": "http://clinfhir.com/CodeSystem/vaccCodes",
+            "display": "MMR"
+          }
+        ]
+      },
+      "foreCastStatus": {
+        "coding": [
+          {
+            "code": "due",
+            "system": "http://terminology.hl7.org/CodeSystem/immunization-recommendation-status"
+          }
+        ]
+      },
+      "dateCriterion": [
+        {
+          "coding": [
+            {
+              "code": "30980-7",
+              "system": "http://loinc.org"
+            }
+          ],
+          "value": "2022-03-24T05:43:52.629Z"
+        }
+      ],
+      "series": "MMR",
+      "doseNumberPositiveInt": 1
+    },
+    {
+      "vaccineCode": {
+        "coding": [
+          {
+            "code": "mmr",
+            "system": "http://clinfhir.com/CodeSystem/vaccCodes",
+            "display": "MMR"
+          }
+        ]
+      },
+      "foreCastStatus": {
+        "coding": [
+          {
+            "code": "due",
+            "system": "http://terminology.hl7.org/CodeSystem/immunization-recommendation-status"
+          }
+        ]
+      },
+      "dateCriterion": [
+        {
+          "coding": [
+            {
+              "code": "30980-7",
+              "system": "http://loinc.org"
+            }
+          ],
+          "value": "2022-06-22T06:43:52.629Z"
+        }
+      ],
+      "series": "MMR",
+      "doseNumberPositiveInt": 2
+    },
+    {
+      "vaccineCode": {
+        "coding": [
+          {
+            "code": "hib",
+            "system": "http://clinfhir.com/CodeSystem/vaccCodes",
+            "display": "Hib"
+          }
+        ]
+      },
+      "foreCastStatus": {
+        "coding": [
+          {
+            "code": "due",
+            "system": "http://terminology.hl7.org/CodeSystem/immunization-recommendation-status"
+          }
+        ]
+      },
+      "dateCriterion": [
+        {
+          "coding": [
+            {
+              "code": "30980-7",
+              "system": "http://loinc.org"
+            }
+          ],
+          "value": "2022-06-22T06:43:52.629Z"
+        }
+      ],
+      "series": "HIB",
+      "doseNumberPositiveInt": 1
+    },
+    {
+      "vaccineCode": {
+        "coding": [
+          {
+            "code": "hib",
+            "system": "http://clinfhir.com/CodeSystem/vaccCodes",
+            "display": "Hib"
+          }
+        ]
+      },
+      "foreCastStatus": {
+        "coding": [
+          {
+            "code": "due",
+            "system": "http://terminology.hl7.org/CodeSystem/immunization-recommendation-status"
+          }
+        ]
+      },
+      "dateCriterion": [
+        {
+          "coding": [
+            {
+              "code": "30980-7",
+              "system": "http://loinc.org"
+            }
+          ],
+          "value": "2022-06-22T06:43:52.629Z"
+        }
+      ],
+      "series": "VV",
+      "doseNumberPositiveInt": 1
+    }
+  ]
+}
