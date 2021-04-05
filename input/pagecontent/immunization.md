@@ -18,10 +18,10 @@ Key API functionality includes
 The resources involved in the Immunization program are:
 
 
-[PlanDefinition](StructureDefinition-paedplan.html) which defines the national plan
-[ActivityDefinition](StructureDefinition-immactivity.html) which define the individual vaccine administrations within the plan
-[ImmunizationRecommendation](StructureDefinition-paedimmrec.html) which represents the plan applied to an individual
-[Immunization]() used to share the administration of a vaccine
+* [PlanDefinition](StructureDefinition-paedplan.html) which defines the national plan
+* [ActivityDefinition](StructureDefinition-immactivity.html) which define the individual vaccine administrations within the plan
+* [ImmunizationRecommendation](StructureDefinition-paedimmrec.html) which represents the plan applied to an individual
+* [Immunization](StructureDefinition-nz-immunization.html) used to share the administration of a vaccine
 
 ### Overall process summary
 

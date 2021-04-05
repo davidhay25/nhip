@@ -29,6 +29,9 @@ arFiles.forEach(function(name){
     }
 })
 
+//create a disease hash for the display by disease
+let hashDiseases = {}
+
 let ar = []     //the report by age
 ar.push("<div xmlns='http://www.w3.org/1999/xhtml'>")
 
@@ -39,7 +42,7 @@ ar.push("<h3>Paediatric program by Age</h3>")
 
 //ar.push("<br/><strong>Paediatric program by Age</strong><br/><br/>")
 ar.push("<table class='table table-bordered table-hover table-sm'>")
-ar.push("<tr><th>Age</th><th>AD Url</th><th>Vaccine</th><th>Series</th><th>Sequence</th></tr>")
+ar.push("<tr><th>Age</th><th>AD Url</th><th>Vaccine</th><th>Series</th><th>Sequence</th><th>Diseases Covered</th></tr>")
 
 let hashSeries = {}
 let IR = {"resourceType":"ImmunizationRecommendation"}
@@ -83,16 +86,17 @@ plan.action.forEach(function(top){
 
 
 
-            //console.log(ad.dosage[0].route)
-            let ccCode = ad.productCodeableConcept
-            let vaccineCode = ccCode.coding[0].code
-            let vaccineDisplay = ccCode.coding[0].display
-            ar.push("<td>" + vaccineDisplay +  " (" + vaccineCode + ")")
-            ar.push("<div>")
-            ar.push(ad.dosage[0].doseAndRate[0].doseQuantity.value + " " + ad.dosage[0].doseAndRate[0].doseQuantity.code + " ")
-            ar.push(ad.dosage[0].route.coding[0].display)
-            ar.push("</div>")
-            ar.push("</td>")
+
+        //console.log(ad.dosage[0].route)
+        let ccCode = ad.productCodeableConcept
+        let vaccineCode = ccCode.coding[0].code
+        let vaccineDisplay = ccCode.coding[0].display
+        ar.push("<td>" + vaccineDisplay +  " (" + vaccineCode + ")")
+        ar.push("<div>")
+        ar.push(ad.dosage[0].doseAndRate[0].doseQuantity.value + " " + ad.dosage[0].doseAndRate[0].doseQuantity.code + " ")
+        ar.push(ad.dosage[0].route.coding[0].display)
+        ar.push("</div>")
+        ar.push("</td>")
 
            
 
@@ -131,6 +135,19 @@ plan.action.forEach(function(top){
         hashSeries[vo.series] = hashSeries[vo.series] || []
         hashSeries[vo.series].push({age:age,units:units})
 
+        //add the diseases
+        let diseases = getDiseases(ad)
+        ar.push("<td>")
+        if (diseases.length > 0) {
+            diseases.forEach(function(dis){
+                ar.push("<div>" + dis.display + "</div>")
+                //update the hash for the display...
+                hashDiseases[dis.code] = hashDiseases[dis.code] || []
+                let item = {disease:dis.display,age:age, units:units, vaccine:ad.productCodeableConcept}
+                hashDiseases[dis.code].push(item)
+            })
+        } 
+        ar.push("</td>")
         ar.push("</tr>")
         //console.log(detail)
 
@@ -163,6 +180,39 @@ Object.keys(hashSeries).forEach(function(key){
 
 ar.push("</table>")
 
+//{age:age, units:units, vaccine:ad.productCodeableConcept}
+
+//now the report by disease
+//now we can add the report by series
+ar.push('<a name="byDisease"> </a>')   
+ar.push("<h3>Programme of diseases covered</h3>")
+ar.push("<table class='table table-bordered table-hover table-sm'>")
+ar.push("<tr><th>Disease</th><th>Ages</th></tr>")
+
+Object.keys(hashDiseases).forEach(function(key){
+    ar.push("<tr>")
+    let item = hashDiseases[key]
+    //console.log(item)
+    ar.push("<td width='20%'>" + item[0].disease + "</td>")
+    
+    ar.push("<td>")
+
+    ar.push("<table>")
+    item.forEach(function(admin) {
+        ar.push("<tr>")
+        ar.push("<td class = 'width:130px'>" + admin.age + " " + admin.units + "</td>")
+        ar.push("<td>" + admin.vaccine.coding[0].display + "</td>")
+        ar.push("</tr>")
+    })
+
+    ar.push("</table>")
+    ar.push("</td>")
+
+    ar.push("</tr>")
+})
+
+ar.push("</table>")
+
 //now add the ID
 ar.push('<a name="IR"> </a>')   
 ar.push("<h3>Sample ImmunizationRecommendation for newborn</h3>")
@@ -188,4 +238,21 @@ function getSeries(ext) {
     vo.series = ext.extension[0].valueString;
     vo.sequence = ext.extension[1].valuePositiveInt;
     return vo;
+}
+
+//get the list of diseases
+function getDiseases(ad) {
+    let diseases = []
+    if (ad.extension) {
+        ad.extension.forEach(function(ext){
+            //console.log(ext.url,diseaseCoveredExtUrl)
+            if (ext.url == diseaseCoveredExtUrl) {
+                let code = ext.valueCodeableConcept.coding[0].code;
+                let display = ext.valueCodeableConcept.coding[0].display;
+
+                diseases.push({code:code,display:display})
+            }
+        })
+    }
+    return diseases;
 }

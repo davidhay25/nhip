@@ -3,7 +3,7 @@ Alias: $vaccSequence = http://clinfhir.com/StructureDefinition/vacc-sequence
 Profile:        NzImmunization
 Parent:         Immunization
 Id:             nz-immunization
-Title:          "Immunization resource. Records a single administration of a vaccine"
+Description:          "Immunization resource. Records a single administration of a vaccine"
 
 * ^url = "http://hl7.org.nz/fhir/StructureDefinition/nz-immunization"
 * ^jurisdiction.coding = urn:iso:std:iso:3166#NZ

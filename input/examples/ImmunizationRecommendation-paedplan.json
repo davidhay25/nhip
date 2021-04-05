@@ -13,7 +13,7 @@
       "display": "Patient reference here"
     }
   },
-  "date": "2021-03-29T05:43:52.628Z",
+  "date": "2021-04-01T23:28:33.189Z",
   "recommendation": [
     {
       "vaccineCode": {
@@ -41,7 +41,7 @@
               "system": "http://loinc.org"
             }
           ],
-          "value": "2021-05-10T06:43:52.628Z"
+          "value": "2021-05-14T00:28:33.189Z"
         }
       ],
       "series": "DTaP-IPV-HepB/Hib",
@@ -114,7 +114,7 @@
               {
                 "code": "91428005",
                 "system": "http:snomed.info",
-                "display": "Haemophilus Influenzae infection"
+                "display": "Haemophilus Influenzae"
               }
             ]
           }
@@ -147,11 +147,25 @@
               "system": "http://loinc.org"
             }
           ],
-          "value": "2021-05-10T06:43:52.628Z"
+          "value": "2021-05-14T00:28:33.189Z"
         }
       ],
       "series": "PCV10",
-      "doseNumberPositiveInt": 1
+      "doseNumberPositiveInt": 1,
+      "extension": [
+        {
+          "url": "http://clinfhir.com/StructureDefinition/disease-covered",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "code": "16814004",
+                "system": "http:snomed.info",
+                "display": "Pneumococcal disease"
+              }
+            ]
+          }
+        }
+      ]
     },
     {
       "vaccineCode": {
@@ -179,11 +193,25 @@
               "system": "http://loinc.org"
             }
           ],
-          "value": "2021-05-10T06:43:52.628Z"
+          "value": "2021-05-14T00:28:33.189Z"
         }
       ],
       "series": "RV1",
-      "doseNumberPositiveInt": 1
+      "doseNumberPositiveInt": 1,
+      "extension": [
+        {
+          "url": "http://clinfhir.com/StructureDefinition/disease-covered",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "code": "18624000",
+                "system": "http:snomed.info",
+                "display": "Rotavirus"
+              }
+            ]
+          }
+        }
+      ]
     },
     {
       "vaccineCode": {
@@ -211,7 +239,7 @@
               "system": "http://loinc.org"
             }
           ],
-          "value": "2021-06-27T06:43:52.629Z"
+          "value": "2021-07-01T00:28:33.190Z"
         }
       ],
       "series": "DTaP-IPV-HepB/Hib",
@@ -284,7 +312,7 @@
               {
                 "code": "91428005",
                 "system": "http:snomed.info",
-                "display": "Haemophilus Influenzae infection"
+                "display": "Haemophilus Influenzae"
               }
             ]
           }
@@ -317,11 +345,25 @@
               "system": "http://loinc.org"
             }
           ],
-          "value": "2021-06-27T06:43:52.629Z"
+          "value": "2021-07-01T00:28:33.190Z"
         }
       ],
       "series": "RV1",
-      "doseNumberPositiveInt": 1
+      "doseNumberPositiveInt": 1,
+      "extension": [
+        {
+          "url": "http://clinfhir.com/StructureDefinition/disease-covered",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "code": "18624000",
+                "system": "http:snomed.info",
+                "display": "Rotavirus"
+              }
+            ]
+          }
+        }
+      ]
     },
     {
       "vaccineCode": {
@@ -349,7 +391,7 @@
               "system": "http://loinc.org"
             }
           ],
-          "value": "2021-08-26T06:43:52.629Z"
+          "value": "2021-08-30T00:28:33.190Z"
         }
       ],
       "series": "DTaP-IPV-HepB/Hib",
@@ -422,7 +464,7 @@
               {
                 "code": "91428005",
                 "system": "http:snomed.info",
-                "display": "Haemophilus Influenzae infection"
+                "display": "Haemophilus Influenzae"
               }
             ]
           }
@@ -455,11 +497,25 @@
               "system": "http://loinc.org"
             }
           ],
-          "value": "2021-08-26T06:43:52.629Z"
+          "value": "2021-08-30T00:28:33.190Z"
         }
       ],
       "series": "PCV10",
-      "doseNumberPositiveInt": 2
+      "doseNumberPositiveInt": 2,
+      "extension": [
+        {
+          "url": "http://clinfhir.com/StructureDefinition/disease-covered",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "code": "16814004",
+                "system": "http:snomed.info",
+                "display": "Pneumococcal disease"
+              }
+            ]
+          }
+        }
+      ]
     },
     {
       "vaccineCode": {
@@ -487,11 +543,49 @@
               "system": "http://loinc.org"
             }
           ],
-          "value": "2022-03-24T05:43:52.629Z"
+          "value": "2022-03-27T23:28:33.190Z"
         }
       ],
       "series": "MMR",
-      "doseNumberPositiveInt": 1
+      "doseNumberPositiveInt": 1,
+      "extension": [
+        {
+          "url": "http://clinfhir.com/StructureDefinition/disease-covered",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "code": "14189004",
+                "system": "http:snomed.info",
+                "display": "Measles"
+              }
+            ]
+          }
+        },
+        {
+          "url": "http://clinfhir.com/StructureDefinition/disease-covered",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "code": "36989005",
+                "system": "http:snomed.info",
+                "display": "Mumps"
+              }
+            ]
+          }
+        },
+        {
+          "url": "http://clinfhir.com/StructureDefinition/disease-covered",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "code": "36653000",
+                "system": "http:snomed.info",
+                "display": "Rubella"
+              }
+            ]
+          }
+        }
+      ]
     },
     {
       "vaccineCode": {
@@ -519,11 +613,49 @@
               "system": "http://loinc.org"
             }
           ],
-          "value": "2022-06-22T06:43:52.629Z"
+          "value": "2022-06-26T00:28:33.190Z"
         }
       ],
       "series": "MMR",
-      "doseNumberPositiveInt": 2
+      "doseNumberPositiveInt": 2,
+      "extension": [
+        {
+          "url": "http://clinfhir.com/StructureDefinition/disease-covered",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "code": "14189004",
+                "system": "http:snomed.info",
+                "display": "Measles"
+              }
+            ]
+          }
+        },
+        {
+          "url": "http://clinfhir.com/StructureDefinition/disease-covered",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "code": "36989005",
+                "system": "http:snomed.info",
+                "display": "Mumps"
+              }
+            ]
+          }
+        },
+        {
+          "url": "http://clinfhir.com/StructureDefinition/disease-covered",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "code": "36653000",
+                "system": "http:snomed.info",
+                "display": "Rubella"
+              }
+            ]
+          }
+        }
+      ]
     },
     {
       "vaccineCode": {
@@ -551,19 +683,33 @@
               "system": "http://loinc.org"
             }
           ],
-          "value": "2022-06-22T06:43:52.629Z"
+          "value": "2022-06-26T00:28:33.190Z"
         }
       ],
       "series": "HIB",
-      "doseNumberPositiveInt": 1
+      "doseNumberPositiveInt": 1,
+      "extension": [
+        {
+          "url": "http://clinfhir.com/StructureDefinition/disease-covered",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "code": "91428005",
+                "system": "http:snomed.info",
+                "display": "Haemophilus influenzae "
+              }
+            ]
+          }
+        }
+      ]
     },
     {
       "vaccineCode": {
         "coding": [
           {
-            "code": "hib",
+            "code": "vv",
             "system": "http://clinfhir.com/CodeSystem/vaccCodes",
-            "display": "Hib"
+            "display": "VV"
           }
         ]
       },
@@ -583,11 +729,25 @@
               "system": "http://loinc.org"
             }
           ],
-          "value": "2022-06-22T06:43:52.629Z"
+          "value": "2022-06-26T00:28:33.190Z"
         }
       ],
       "series": "VV",
-      "doseNumberPositiveInt": 1
+      "doseNumberPositiveInt": 1,
+      "extension": [
+        {
+          "url": "http://clinfhir.com/StructureDefinition/disease-covered",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "code": "38907003",
+                "system": "http:snomed.info",
+                "display": "Varicella"
+              }
+            ]
+          }
+        }
+      ]
     }
   ]
 }

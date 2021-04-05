@@ -20,9 +20,7 @@ Usage: #example
 * extension[disease-covered][2].valueCodeableConcept = SCT#27836007 "Pertussis"
 * extension[disease-covered][3].valueCodeableConcept = SCT#398102009 "Polio Myelitis"
 * extension[disease-covered][4].valueCodeableConcept = SCT#66071002 "Viral Hepatitis type B"
-* extension[disease-covered][5].valueCodeableConcept = SCT#91428005 "Haemophilus Influenzae infection"
-
-
+* extension[disease-covered][5].valueCodeableConcept = SCT#91428005 "Haemophilus Influenzae"
 
 
 //This is a made up code! Probably SNOMED for real
@@ -39,9 +37,13 @@ Usage: #example
 * url = "http://clinfhir/ActivityDefinition/pcv10"
 * title = "Administer PCV10 vaccine"
 * status = #draft
+
+* extension[disease-covered][0].valueCodeableConcept = SCT#16814004 "Pneumococcal disease"
+
 * productCodeableConcept = $vaccCode#pcv10 "PCV10"
 * dosage.doseAndRate.doseQuantity = 0.5 'ml'
 * dosage.route = http://snomed.info/sct#78421000 "Intramuscular route"
+
 
 Instance: adRv1
 InstanceOf: ActivityDefinition
@@ -51,6 +53,9 @@ Usage: #example
 * url = "http://clinfhir/ActivityDefinition/rv1"
 * title = "Administer RV1 vaccine"
 * status = #draft
+
+* extension[disease-covered][0].valueCodeableConcept = SCT#18624000 "Rotavirus"
+
 * productCodeableConcept = $vaccCode#prv1 "RV1"
 * dosage.doseAndRate.doseQuantity = 0.5 'ml'
 * dosage.route = http://snomed.info/sct#78421000 "Intramuscular route"
@@ -58,12 +63,16 @@ Usage: #example
 //----
 Instance: adDmmr
 InstanceOf: ActivityDefinition
-Description: "Administer DTap vaccine"
+Description: "Administer MMR vaccine"
 Usage: #example
 
 * url = "http://clinfhir/ActivityDefinition/mmr"
 * title = "Administer MMR vaccine"
 * status = #draft
+
+* extension[disease-covered][0].valueCodeableConcept = SCT#14189004 "Measles"
+* extension[disease-covered][1].valueCodeableConcept = SCT#36989005 "Mumps"
+* extension[disease-covered][2].valueCodeableConcept = SCT#36653000 "Rubella"
 
 * productCodeableConcept = $vaccCode#mmr "MMR"
 * dosage.doseAndRate.doseQuantity = 0.5 'ml'
@@ -78,6 +87,9 @@ Usage: #example
 * title = "Administer Hib vaccine"
 * status = #draft
 
+* extension[disease-covered][0].valueCodeableConcept = SCT#91428005 "Haemophilus influenzae "
+
+
 * productCodeableConcept = $vaccCode#hib "Hib"
 * dosage.doseAndRate.doseQuantity = 0.5 'ml'
 * dosage.route = http://snomed.info/sct#78421000 "Intramuscular route"
@@ -91,7 +103,11 @@ Usage: #example
 * title = "Administer VV vaccine"
 * status = #draft
 
-* productCodeableConcept = $vaccCode#hib "Hib"
+* extension[disease-covered][0].valueCodeableConcept = SCT#38907003 "Varicella"
+
+
+
+* productCodeableConcept = $vaccCode#vv "VV"
 * dosage.doseAndRate.doseQuantity = 0.5 'ml'
 * dosage.route = http://snomed.info/sct#78421000 "Intramuscular route"
 
@@ -170,7 +186,7 @@ Usage: #example
 * action[2].action[0].extension[vacc-sequence].extension[series].valueString = "DTaP-IPV-HepB/Hib"
 * action[2].action[0].extension[vacc-sequence].extension[sequence].valuePositiveInt = 3
 
-* action[2].action[1].title = "PCV10 administration at 3 months"
+* action[2].action[1].title = "PCV10 administration at 5 months"
 * action[2].action[1].definitionCanonical = "http://clinfhir/ActivityDefinition/pcv10"
 * action[2].action[1].extension[vacc-sequence].extension[series].valueString = "PCV10"
 * action[2].action[1].extension[vacc-sequence].extension[sequence].valuePositiveInt = 2
@@ -211,7 +227,7 @@ Usage: #example
 * action[4].action[1].extension[vacc-sequence].extension[series].valueString = "HIB"
 * action[4].action[1].extension[vacc-sequence].extension[sequence].valuePositiveInt = 1
 
-* action[4].action[2].title = "VV administration at 12 months"
+* action[4].action[2].title = "VV administration at 15 months"
 * action[4].action[2].definitionCanonical = "http://clinfhir/ActivityDefinition/vv"
 * action[4].action[2].extension[vacc-sequence].extension[series].valueString = "VV"
 * action[4].action[2].extension[vacc-sequence].extension[sequence].valuePositiveInt = 1
@@ -221,11 +237,20 @@ InstanceOf: Patient
 Description: "demo patient"
 Usage: #example
 
+* name.family = "Doe"
+* name.given = "John"
+* gender = #male
+* birthDate = "2021-03-01"
+
 
 Instance: imm1
 InstanceOf: Immunization
 Description: "First administration of DTaP-IPV-HepB/Hib"
 Usage: #example
+
+//an extension containing the url of the PlanDefinition that represents the paediatric protocol
+* extension.url = "http://clinfhir.com/StructureDefinition/protocol"
+* extension.valueUrl = "http://clinfhir.com/PlanDefinition/paediatric"
 
 * status = #completed
 * patient = Reference(pat)
@@ -236,7 +261,7 @@ Usage: #example
 
 
 Instance: ir1
-InstanceOf: ImmunizationRecommendation
+InstanceOf: PaedImmunizationRecommendation
 Description: "An IR generated for a new born. Birth date 2021-01-01"
 Usage: #example
 
@@ -254,6 +279,14 @@ Usage: #example
 * recommendation[0].doseNumberPositiveInt = 1
 * recommendation[0].dateCriterion.code = http://loinc.org#30980-7   "Date due"
 * recommendation[0].dateCriterion.value = "2021-01-14"      //age 6 weeks
+
+//the 'disease covered' extensions
+* recommendation[0].extension[disease-covered][0].valueCodeableConcept = SCT#397428000 "Diptheria"
+* recommendation[0].extension[disease-covered][1].valueCodeableConcept = SCT#76902006 "Tetanus"
+* recommendation[0].extension[disease-covered][2].valueCodeableConcept = SCT#27836007 "Pertussis"
+* recommendation[0].extension[disease-covered][3].valueCodeableConcept = SCT#398102009 "Polio Myelitis"
+* recommendation[0].extension[disease-covered][4].valueCodeableConcept = SCT#66071002 "Viral Hepatitis type B"
+* recommendation[0].extension[disease-covered][5].valueCodeableConcept = SCT#91428005 "Haemophilus Influenzae infection"
 
 //the recommendation for the 6 week PVC10
 * recommendation[1].forecastStatus = $forecastStatus#due
